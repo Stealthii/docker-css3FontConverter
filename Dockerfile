@@ -38,4 +38,7 @@ RUN git clone https://github.com/zoltan-dulac/css3FontConverter /app && mkdir -p
 
 WORKDIR /fonts
 
-CMD ["/app/convertFonts.sh"]
+ADD run.sh /run.sh
+RUN chmod 755 /run.sh
+
+ENTRYPOINT ["/run.sh"]
