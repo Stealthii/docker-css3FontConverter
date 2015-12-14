@@ -5,8 +5,6 @@ docker-css3FontConverter
 
 As usual there's a bunch of ridiculous dependencies so here's a docker image containing everything you need
 
-**NOTE**: I know WOFF2 generation is broken right now, bear with me.
-
 #### How to Download ####
 ```sh
 docker pull stealthii/css3-font-converter

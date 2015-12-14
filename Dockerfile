@@ -27,6 +27,10 @@ RUN mkdir -p /build && \
     cd /build && wget http://people.mozilla.org/~jkew/woff/woff-code-latest.zip && \
     unzip -d woff-code-latest woff-code-latest.zip && \
     cd /build/woff-code-latest && make && cp sfnt2woff /usr/local/bin/sfnt2woff && \
+    \
+    echo "woff2 build" && \
+    cd /build && git clone --recursive https://github.com/google/woff2.git woff2 && \
+    cd woff2 && make clean all && cp woff2_* /usr/local/bin/ && \
     cd / && rm -rf /build
 
 ## CSS3FontConverter
