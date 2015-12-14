@@ -4,7 +4,8 @@ MAINTAINER Dan Porter <dan.porter@rehabstudio.com>
 # Get all required packages
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
-        fontforge wget tar build-essential \
+        fontforge ttfautohint \
+        wget tar build-essential \
         openjdk-7-jdk \
         git \
         unzip zlib1g-dev \
@@ -26,11 +27,6 @@ RUN mkdir -p /build && \
     cd /build && wget http://people.mozilla.org/~jkew/woff/woff-code-latest.zip && \
     unzip -d woff-code-latest woff-code-latest.zip && \
     cd /build/woff-code-latest && make && cp sfnt2woff /usr/local/bin/sfnt2woff && \
-    \
-    echo "ttfautohint build" && \
-    cd /build && wget http://downloads.sourceforge.net/project/freetype/ttfautohint/0.97/ttfautohint-0.97.tar.gz && \
-    tar zxvf ttfautohint-0.97.tar.gz && \
-    cd /build/ttfautohint-0.97 && ./configure --without-doc && make install && \
     cd / && rm -rf /build
 
 ## CSS3FontConverter
