@@ -1,5 +1,5 @@
 FROM      ubuntu:trusty
-MAINTAINER Dan Porter <dan.porter@rehabstudio.com>
+MAINTAINER Dan Porter <dpreid@gmail.com>
 
 # Get all required packages
 RUN apt-get update && \
@@ -18,15 +18,14 @@ RUN apt-get update && \
 RUN mkdir -p /build && \
     \
     echo "ttf2eot build" && \
-    cd /build && wget --no-check-certificate https://ttf2eot.googlecode.com/files/ttf2eot-0.0.2-2.tar.gz && \
-    tar zxvf ttf2eot-0.0.2-2.tar.gz && \
-    sed -i.bak "/using std::vector;/ i\#include <cstddef>" /build/ttf2eot-0.0.2-2/OpenTypeUtilities.h && \
-    cd /build/ttf2eot-0.0.2-2 && make && cp ttf2eot /usr/local/bin/ttf2eot && \
+    cd /build && wget https://github.com/wget/ttf2eot/archive/v0.0.3.tar.gz && \
+    tar zxvf v0.0.3.tar.gz && \
+    cd /build/ttf2eot-0.0.3 && make && cp ttf2eot /usr/local/bin/ttf2eot && \
     \
     echo "woff build" && \
-    cd /build && wget http://people.mozilla.org/~jkew/woff/woff-code-latest.zip && \
-    unzip -d woff-code-latest woff-code-latest.zip && \
-    cd /build/woff-code-latest && make && cp sfnt2woff /usr/local/bin/sfnt2woff && \
+    cd /build && wget https://github.com/samboy/WOFF/archive/2017-06-11.tar.gz && \
+    tar zxvf 2017-06-11.tar.gz && \
+    cd /build/WOFF-2017-06-11 && make && cp sfnt2woff /usr/local/bin/sfnt2woff && \
     \
     echo "woff2 build" && \
     cd /build && git clone --recursive https://github.com/google/woff2.git woff2 && \

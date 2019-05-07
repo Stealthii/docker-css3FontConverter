@@ -7,7 +7,7 @@ As usual there's a bunch of ridiculous dependencies so here's a docker image con
 
 #### How to Download ####
 ```sh
-docker pull stealthii/css3-font-converter
+docker pull stealthii/css3fontconverter
 ```
 
 #### How to Build ####
@@ -17,19 +17,19 @@ Fetch the code
 ```sh
 git clone https://github.com/Stealthii/docker-css3FontConverter.git
 cd docker-css3FontConverter
-docker build -t omarev/css3-font-converter .
+docker build -t stealthii/css3fontconverter .
 ```
 
 #### How to convert fonts ####
 
 Convert all `ttf` and `otf` files in the current directory (default):
 ```sh
-docker run -it -v `pwd`:/fonts stealthii/css3-font-converter
+docker run -it -v `pwd`:/fonts stealthii/css3fontconverter
 ```
 
 Convert some `otf` files in `/mnt/silly-project`:
 ```sh
-docker run -it -v /mnt/silly-project:/fonts stealthii/css3-font-converter project*.otf
+docker run -it -v /mnt/silly-project:/fonts stealthii/css3fontconverter project*.otf
 ```
 
 
