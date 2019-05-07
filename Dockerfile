@@ -9,7 +9,6 @@ RUN apt-get update && \
         openjdk-7-jdk \
         git \
         unzip zlib1g-dev \
-        libqt4-core libqt4-dev libqt4-gui qt4-dev-tools \
         libfreetype6-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
