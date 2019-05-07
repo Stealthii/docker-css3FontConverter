@@ -22,14 +22,14 @@ docker build -t omarev/css3-font-converter .
 
 #### How to convert fonts ####
 
-Convert all `ttf` files in the current directory:
+Convert all `ttf` and `otf` files in the current directory (default):
 ```sh
 docker run -it -v `pwd`:/fonts stealthii/css3-font-converter
 ```
 
 Convert some `otf` files in `/mnt/silly-project`:
 ```sh
-docker run -it -v /mnt/silly-project:/fonts stealthii/css3-font-converter *.otf
+docker run -it -v /mnt/silly-project:/fonts stealthii/css3-font-converter project*.otf
 ```
 
 

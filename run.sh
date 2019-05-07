@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ $# -eq 0 ]] ; then
-    params="*.ttf"
+    params="*.ttf *.otf"
 else
     params=$@
 fi
